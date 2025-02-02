@@ -35,10 +35,10 @@ function App() {
             <p className=" font-bold">📞 11-22541220</p>
 
           </div>
-          <div className="flex justify-center w-40 h-40my-4">
-            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40"/>
-          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-10" />
-          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40"/>
+          <div className="flex justify-center my-4 items-center">
+            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40 w-32 h-32"/>
+          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-5" />
+          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40 w-30 h-32"/>
 
           </div>
           <div className="hidden space-x-6 md:flex" data-aos="fade-left">
@@ -55,7 +55,7 @@ function App() {
         </nav>
 
         <div
-          className="container px-4 pb-3 md:py-20 mx-auto text-center bg-blue-600"
+          className="container px-4 pb-3 md:py-20 mx-auto text-center bg-blue-600 "
           data-aos="fade-up"
         >
           <h1 className="mb-6 text-2xl font-bold md:text-5xl pt-2">
