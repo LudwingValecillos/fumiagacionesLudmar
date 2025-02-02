@@ -25,15 +25,17 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header
-        className="bg-gradient-to-r from-teal-600 to-teal-800 text-white"
+        className="text-white bg-gradient-to-r from-teal-600 to-teal-800"
         data-aos="fade-down"
       >
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="container flex items-center pt-4 mx-auto">
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="logo" className=" w-12 h-12" />
             <span className="text-2xl font-bold">Fumigaciones Ludmar</span>
+          <img src={logo} alt="logo" className="w-12 h-12 " />
+
           </div>
-          <div className="hidden md:flex space-x-6" data-aos="fade-left">
+
+          <div className="hidden space-x-6 md:flex" data-aos="fade-left">
             <a href="#servicios" className="hover:text-teal-200">
               Servicios
             </a>
@@ -47,16 +49,16 @@ function App() {
         </nav>
 
         <div
-          className="container mx-auto px-6 py-20 text-center"
+          className="container px-6 py-20 mx-auto text-center"
           data-aos="fade-up"
         >
-          <h1 className="text-5xl font-bold mb-6">
+          <h1 className="mb-6 text-5xl font-bold">
             Protección Total Contra Plagas
           </h1>
-          <p className="text-xl mb-8">
-            Expertos en control de plagas - Garantizamos tu tranquilidad
+          <p className="mb-8 text-xl">
+          Somos una empresa liderada por Ingenieros Agrónomos especializados en el manejo integral de plagas, comprometidos con un enfoque ecológico y respetuoso con el medio ambiente. Nuestra prioridad es garantizar la protección de su familia, empleados y entorno, ofreciendo soluciones seguras y efectivas.
           </p>
-          <button className="bg-white text-teal-800 px-8 py-3 rounded-full font-semibold hover:bg-teal-100 transition duration-300">
+          <button className="px-8 py-3 font-semibold text-teal-800 transition duration-300 bg-white rounded-full hover:bg-teal-100">
             ¡Solicita tu presupuesto gratis!
           </button>
         </div>
@@ -64,16 +66,23 @@ function App() {
 
       {/* Services Section */}
       <section id="servicios" className="py-20 bg-gray-50" data-aos="fade-up">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-800">
+        <div className="container px-6 mx-auto">
+          <h2 className="mb-16 text-3xl font-bold text-center text-gray-800">
             Nuestros Servicios
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 title: "Cucarachas",
                 image:
                   "https://hamasl.com/wp-content/uploads/2022/05/como-eliminar-cucarachas-en-casa.jpg",
+                  description: "adas"
+              
+                },
+              {
+                title: "Ratas",
+                image:
+                  "https://tvazteca.brightspotcdn.com/dims4/default/07e384a/2147483647/strip/true/crop/2121x1414+0+0/resize/620x413!/format/webp/quality/90/?url=http%3A%2F%2Ftv-azteca-brightspot.s3.amazonaws.com%2F7c%2F67%2F0762ecba49f8b659892e06d204f3%2Fgettyimages-996155102.jpg",
               },
               {
                 title: "Hormigas",
@@ -90,11 +99,7 @@ function App() {
                 image:
                   "https://media.todojujuy.com/p/2a97ea19366ca1fff2fd9edcb2475cd5/adjuntos/227/imagenes/003/370/0003370931/790x0/smart/sorprendentes-trucos-eliminar-pulgas-la-casa.jpg",
               },
-              {
-                title: "Ratas",
-                image:
-                  "https://tvazteca.brightspotcdn.com/dims4/default/07e384a/2147483647/strip/true/crop/2121x1414+0+0/resize/620x413!/format/webp/quality/90/?url=http%3A%2F%2Ftv-azteca-brightspot.s3.amazonaws.com%2F7c%2F67%2F0762ecba49f8b659892e06d204f3%2Fgettyimages-996155102.jpg",
-              },
+              
               {
                 title: "Arañas",
                 image:
@@ -113,24 +118,24 @@ function App() {
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 hover:shadow-xl"
+                className="overflow-hidden transition duration-300 bg-white rounded-lg shadow-lg hover:shadow-xl"
                 data-aos="flip-left"
               >
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-48 object-cover"
+                  className="object-cover w-full h-48"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">
+                  <h3 className="mb-2 text-xl font-semibold">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="mb-4 text-gray-600">
                     Tratamiento profesional y efectivo
                   </p>
                   <a
                     href={`https://wa.me/91122541220?text=Hola%20me%20interesa%20el%20servicio%20contra%20*${service.title}*%20me%20darias%20mas%20informacion%3f`}
-                    className="text-teal-600 font-semibold flex items-center hover:text-teal-800"
+                    className="flex items-center font-semibold text-teal-600 hover:text-teal-800"
                   >
                     Más información <ChevronRight className="w-4 h-4 ml-1" />
                   </a>
@@ -143,8 +148,8 @@ function App() {
 
       {/* Features */}
       <section className="py-20" data-aos="zoom-in">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
+        <div className="container px-6 mx-auto">
+          <div className="grid gap-12 md:grid-cols-3">
             {[
               {
                 icon: <Shield className="w-12 h-12 text-teal-600" />,
@@ -166,7 +171,7 @@ function App() {
             ].map((feature, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                <h3 className="mb-2 text-xl font-semibold">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -176,11 +181,11 @@ function App() {
 
       {/* Testimonials */}
       <section id="testimonios" className="py-20 bg-gray-50" data-aos="fade-up">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-800">
+        <div className="container px-6 mx-auto">
+          <h2 className="mb-16 text-3xl font-bold text-center text-gray-800">
             Testimonios
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-3">
             {[
               {
                 name: "María González",
@@ -197,7 +202,7 @@ function App() {
             ].map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-lg"
+                className="p-6 bg-white rounded-lg shadow-lg"
                 data-aos="flip-up"
               >
                 <div className="flex mb-4">
@@ -208,7 +213,7 @@ function App() {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4">"{testimonial.text}"</p>
+                <p className="mb-4 text-gray-600">"{testimonial.text}"</p>
                 <p className="font-semibold">{testimonial.name}</p>
               </div>
             ))}
@@ -217,18 +222,18 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-teal-700 text-white py-20" data-aos="fade-up">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">
+      <section className="py-20 text-white bg-teal-700" data-aos="fade-up">
+        <div className="container px-6 mx-auto text-center">
+          <h2 className="mb-8 text-4xl font-bold">
             ¡Protege tu hogar hoy mismo!
           </h2>
-          <p className="text-xl mb-8">
+          <p className="mb-8 text-xl">
             Obtén un 10% de descuento en tu primera fumigación
           </p>
 
           <a
             href="https://wa.me/1122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
-            className="bg-white text-teal-700 px-8 py-3 rounded-full font-semibold hover:bg-teal-100 transition duration-300"
+            className="px-8 py-3 font-semibold text-teal-700 transition duration-300 bg-white rounded-full hover:bg-teal-100"
           >
             Solicitar Presupuesto
           </a>
@@ -237,10 +242,10 @@ function App() {
 
       {/* Contact Section */}
       <section id="contacto" className="py-20" data-aos="fade-up">
-        <div className="container mx-auto px-6">
+        <div className="container px-6 mx-auto">
           <div className="max-w-lg mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Contáctanos</h2>
-            <div className="flex justify-center space-x-6 mb-8">
+            <h2 className="mb-8 text-3xl font-bold">Contáctanos</h2>
+            <div className="flex justify-center mb-8 space-x-6">
               <a
                 href="tel:1122541220"
                 className="flex items-center text-teal-600 hover:text-teal-800"
@@ -263,7 +268,7 @@ function App() {
       {/* WhatsApp Float Button */}
       <a
         href="https://wa.me/1122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
-        className="fixed bottom-8 right-8 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
+        className="fixed p-4 text-white transition duration-300 bg-green-500 rounded-full shadow-lg bottom-8 right-8 hover:bg-green-600"
         aria-label="Chat on WhatsApp"
       >
         <MessageCircle className="w-6 h-6" />
