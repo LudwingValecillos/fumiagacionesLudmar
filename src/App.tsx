@@ -26,15 +26,21 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header
-        className="text-white bg-gradient-to-r from-blue-500 to-blue-600"
+        className="text-white bg-gradient-to-r from-blue-400 to-blue-500"
         data-aos="fade-down"
       >
         <nav className="container flex flex-col items-center justify-center md:justify-between pt-4 mx-auto md:flex-row">
           <div className="flex flex-col items-center space-x-2 md:flex-row">
-            <span className="text-2xl font-bold border-b-2">FUMIGACIONES LUDMAR</span>
-          </div>
-          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 " />
+            <p className="text-2xl font-bold border-b-2">FUMIGACIONES LUDMAR</p>
+            <p className=" font-bold">📞 11-22541220</p>
 
+          </div>
+          <div className="flex justify-center w-40 h-40my-4">
+            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40"/>
+          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-10" />
+          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40"/>
+
+          </div>
           <div className="hidden space-x-6 md:flex" data-aos="fade-left">
             <a href="#servicios" className="hover:text-teal-200">
               Servicios
@@ -49,15 +55,14 @@ function App() {
         </nav>
 
         <div
-          className="container px-4 pb-3 md:py-20 mx-auto text-center"
+          className="container px-4 pb-3 md:py-20 mx-auto text-center bg-blue-600"
           data-aos="fade-up"
         >
-          <h1 className="mb-6 text-2xl font-bold md:text-5xl">
+          <h1 className="mb-6 text-2xl font-bold md:text-5xl pt-2">
             Protección Total Contra Plagas
           </h1>
           <p className="mb-8 text-">
-            Expertos en soluciones eficaces para proteger a tu familia,
-            empleados y entorno. <br /><strong> Hogares, bares,
+            Expertos en soluciones eficaces en control de plagas, con mas de 20 años en el mercado, utilizacion de productos domisanitarios, habilitado por el ministerio de salud, contamos con personal tecnico altamente capacitado. <br /><strong> Nuestros servicios estan destinados para: <br />Hogares, bares,
             restaurantes, kioscos, industrias, oficinas y consorcios.</strong>
             <br />
             <br />
@@ -87,7 +92,7 @@ function App() {
                 image:
                   "https://hamasl.com/wp-content/uploads/2022/05/como-eliminar-cucarachas-en-casa.jpg",
                 description:
-                  "Aplicamos gel en gabinetes, bajo mesada y equipos eléctricos, spray líquido en zócalos y polvo detrás del motor de la heladera Cobertura: Cocina, living, baño, 3 habitaciones y galería.",
+                  "Aplicamos gel en gabinetes, bajo mesada y equipos eléctricos, spray líquido en zócalos y polvo detrás del motor de la heladera. Le cubre: Cocina, living, baño, 3 habitaciones y galería.",
               },
               {
                 title: "Ratas",
@@ -134,7 +139,7 @@ function App() {
                     href={`https://wa.me/91122541220?text=Hola%20me%20interesa%20el%20servicio%20contra%20*${service.title}*%20me%20darias%20mas%20informacion%3f`}
                     className="flex items-center font-semibold text-teal-600 hover:text-teal-800"
                   >
-                    Más información <ChevronRight className="w-4 h-4 ml-1" />
+                    Contactactar por WhatsApp <ChevronRight className="w-4 h-4 ml-1" />
                   </a>
                 </div>
               </div>
@@ -152,7 +157,7 @@ function App() {
                 icon: <QrCode className="w-12 h-12 text-teal-600" />,
                 title: "Certificados",
                 description:
-                  "Certificados de fumigacion con codigo QR",
+                  "Certificados de fumigacion con codigo QR.",
               },
               {
                 icon: <Shield className="w-12 h-12 text-teal-600" />,
@@ -231,7 +236,10 @@ function App() {
             ¡Protege tu hogar hoy mismo!
           </h2>
           <p className="mb-8 text-xl">
-            Obtén un 10% de descuento en tu primera fumigación
+            Nos encontramos en zona sur, cubrimos toda la provincia de Buenos Aires.
+          </p>
+          <p className="mb-8 text-xl">
+            Contáctanos para obtener un presupuesto personalizado.
           </p>
 
           <a
@@ -271,10 +279,11 @@ function App() {
       {/* WhatsApp Float Button */}
       <a
         href="https://wa.me/91122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
-        className="fixed p-4 text-white transition duration-300 bg-green-500 rounded-full shadow-lg bottom-8 right-8 hover:bg-green-600"
+        className="fixed flex p-4 text-white transition duration-300 bg-green-500 rounded-full shadow-lg bottom-8 right-8 hover:bg-green-600"
         aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="w-6 h-6" />
+        Contactar aqui
+        <MessageCircle className="w-6 h-6 pl-2" />
       </a>
     </div>
   );
