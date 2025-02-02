@@ -26,19 +26,19 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header
-        className="text-white bg-gradient-to-r from-blue-400 to-blue-500"
+        className="text-white bg-gradient-to-r from-blue-400 to-blue-500 flex flex-col items-center justify-center"
         data-aos="fade-down"
       >
-        <nav className="container flex flex-col items-center justify-center md:justify-between pt-4 mx-auto md:flex-row">
+        <nav className="container flex flex-col items-center justify-center md:justify-between pt-4 w-96 md:flex-row">
           <div className="flex flex-col items-center space-x-2 md:flex-row">
             <p className="text-2xl font-bold border-b-2">FUMIGACIONES LUDMAR</p>
             <p className=" font-bold">📞 11-22541220</p>
 
           </div>
-          <div className="flex justify-center my-4 items-center">
-            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40 w-32 h-32"/>
+          <div className="flex justify-center my-4 w-full items-center">
+            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40 w-20 h-20"/>
           <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-5" />
-          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40 w-30 h-32"/>
+          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40 w-20 h-20"/>
 
           </div>
           <div className="hidden space-x-6 md:flex" data-aos="fade-left">
