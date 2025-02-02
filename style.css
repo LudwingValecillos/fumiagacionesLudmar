@@ -1,0 +1,13 @@
+@keyframes slideBackground {
+    0% {
+      background-position: 0 0, 100% 0, 200% 0;
+    }
+    100% {
+      background-position: 100% 0, 200% 0, 300% 0;
+    }
+  }
+  
+  .animate-slideBackground {
+    animation: slideBackground 30s linear infinite;
+  }
+  
