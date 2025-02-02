@@ -10,9 +10,10 @@ import {
   ChevronRight,
   HandCoins,
   ShieldCheck,
+  QrCode,
 } from "lucide-react";
 import logo from "./imgs/sinfondo.png";
-
+import plaga from "./imgs/Diseño sin título.jpg"
 function App() {
   useEffect(() => {
     AOS.init({
@@ -25,15 +26,14 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header
-        className="text-white bg-gradient-to-r from-teal-600 to-teal-800"
+        className="text-white bg-gradient-to-r from-blue-500 to-blue-600"
         data-aos="fade-down"
       >
-        <nav className="container flex items-center pt-4 mx-auto">
-          <div className="flex items-center space-x-2">
-            <span className="text-2xl font-bold">Fumigaciones Ludmar</span>
-          <img src={logo} alt="logo" className="w-12 h-12 " />
-
+        <nav className="container flex flex-col items-center justify-center md:justify-between pt-4 mx-auto md:flex-row">
+          <div className="flex flex-col items-center space-x-2 md:flex-row">
+            <span className="text-2xl font-bold border-b-2">FUMIGACIONES LUDMAR</span>
           </div>
+          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 " />
 
           <div className="hidden space-x-6 md:flex" data-aos="fade-left">
             <a href="#servicios" className="hover:text-teal-200">
@@ -49,14 +49,24 @@ function App() {
         </nav>
 
         <div
-          className="container px-6 py-20 mx-auto text-center"
+          className="container px-4 pb-3 md:py-20 mx-auto text-center"
           data-aos="fade-up"
         >
-          <h1 className="mb-6 text-5xl font-bold">
+          <h1 className="mb-6 text-2xl font-bold md:text-5xl">
             Protección Total Contra Plagas
           </h1>
-          <p className="mb-8 text-xl">
-          Somos una empresa liderada por Ingenieros Agrónomos especializados en el manejo integral de plagas, comprometidos con un enfoque ecológico y respetuoso con el medio ambiente. Nuestra prioridad es garantizar la protección de su familia, empleados y entorno, ofreciendo soluciones seguras y efectivas.
+          <p className="mb-8 text-">
+            Expertos en soluciones eficaces para proteger a tu familia,
+            empleados y entorno. <br /><strong> Hogares, bares,
+            restaurantes, kioscos, industrias, oficinas y consorcios.</strong>
+            <br />
+            <br />
+            <strong>
+              {" "}
+              Seguridad, eficacia y cuidado del medio ambiente en cada
+              intervención
+            </strong>
+            .
           </p>
           <button className="px-8 py-3 font-semibold text-teal-800 transition duration-300 bg-white rounded-full hover:bg-teal-100">
             ¡Solicita tu presupuesto gratis!
@@ -76,9 +86,9 @@ function App() {
                 title: "Cucarachas",
                 image:
                   "https://hamasl.com/wp-content/uploads/2022/05/como-eliminar-cucarachas-en-casa.jpg",
-                  description: "adas"
-              
-                },
+                description:
+                  "Aplicamos gel en gabinetes, bajo mesada y equipos eléctricos, spray líquido en zócalos y polvo detrás del motor de la heladera Cobertura: Cocina, living, baño, 3 habitaciones y galería.",
+              },
               {
                 title: "Ratas",
                 image:
@@ -90,31 +100,16 @@ function App() {
                   "https://estaticos-cdn.prensaiberica.es/clip/b9e6f7a0-79db-4ad2-8a80-5e88e717908b_16-9-discover-aspect-ratio_default_0.jpg",
               },
               {
-                title: "Garrapatas",
+                title: "Pulgas y Garrapatas",
                 image:
                   "https://www.leonvet.es/update/tipos_de_garrapatas_en_perros_7319_0_600.jpg",
               },
               {
-                title: "Pulgas",
+                title: "Arañas, grillos y escorpiones",
                 image:
-                  "https://media.todojujuy.com/p/2a97ea19366ca1fff2fd9edcb2475cd5/adjuntos/227/imagenes/003/370/0003370931/790x0/smart/sorprendentes-trucos-eliminar-pulgas-la-casa.jpg",
+                  "https://i.imgur.com/xGgtYPQ.jpeg",
               },
-              
-              {
-                title: "Arañas",
-                image:
-                  "https://remihogar.es/cdn/shop/articles/aranas-en-casa_1200x800.jpg?v=1715278813",
-              },
-              {
-                title: "Grillos",
-                image:
-                  "https://ar.cienradios.com/resizer/-q7xv4cvifAQIYT74gvpwFbXSoA=/arc-photo-radiomitre/arc2-prod/public/66KVJQSVPFCAVLLKRHVS6GOC34.jpg",
-              },
-              {
-                title: "Escorpiones",
-                image:
-                  "https://www.lavoz.com.ar/resizer/v2/OZY7WSJWONDWLFH5JW2HENH5MU.png?quality=75&smart=true&auth=72f472f14fcd49e7d47645ccbf1aefdcce2cdd89a8b0b439ee14797972a43676&width=980&height=640",
-              },
+             
             ].map((service, index) => (
               <div
                 key={index}
@@ -124,14 +119,16 @@ function App() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="object-cover w-full h-48"
+                  className="object-cover w-full h-48 "
                 />
                 <div className="p-6">
-                  <h3 className="mb-2 text-xl font-semibold">
+                  <h3 className="mb-2 text-xl font-semibold text-center">
                     {service.title}
                   </h3>
                   <p className="mb-4 text-gray-600">
-                    Tratamiento profesional y efectivo
+                    {service.description
+                      ? service.description
+                      : "Tratamiento profesional y efectivo"}
                   </p>
                   <a
                     href={`https://wa.me/91122541220?text=Hola%20me%20interesa%20el%20servicio%20contra%20*${service.title}*%20me%20darias%20mas%20informacion%3f`}
@@ -152,8 +149,14 @@ function App() {
           <div className="grid gap-12 md:grid-cols-3">
             {[
               {
+                icon: <QrCode className="w-12 h-12 text-teal-600" />,
+                title: "Certificados",
+                description:
+                  "Certificados de fumigacion con codigo QR",
+              },
+              {
                 icon: <Shield className="w-12 h-12 text-teal-600" />,
-                title: "Garantía por escrita por un mes",
+                title: "Garantía escrita",
                 description:
                   "Respaldamos nuestro trabajo con garantía de satisfacción.",
               },
@@ -161,7 +164,7 @@ function App() {
                 icon: <HandCoins className="w-12 h-12 text-teal-600" />,
                 title: "Aceptamos todos los medios de pago",
                 description:
-                  "Tarjetas de crédito, débito, efectivo y transferencias.",
+                  "Débito, efectivo y transferencias.",
               },
               {
                 icon: <ShieldCheck className="w-12 h-12 text-teal-600" />,
@@ -222,7 +225,7 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-white bg-teal-700" data-aos="fade-up">
+      <section className="py-20 text-white bg-blue-700" data-aos="fade-up">
         <div className="container px-6 mx-auto text-center">
           <h2 className="mb-8 text-4xl font-bold">
             ¡Protege tu hogar hoy mismo!
@@ -232,7 +235,7 @@ function App() {
           </p>
 
           <a
-            href="https://wa.me/1122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
+            href="https://wa.me/91122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
             className="px-8 py-3 font-semibold text-teal-700 transition duration-300 bg-white rounded-full hover:bg-teal-100"
           >
             Solicitar Presupuesto
@@ -254,7 +257,7 @@ function App() {
                 <span>11 2254-1220</span>
               </a>
               <a
-                href="https://wa.me/1122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
+                href="https://wa.me/91122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
                 className="flex items-center text-teal-600 hover:text-teal-800"
               >
                 <MessageCircle className="w-6 h-6 mr-2" />
@@ -267,7 +270,7 @@ function App() {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/1122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
+        href="https://wa.me/91122541220?text=Hola%20me%20interesa%20solicitar%20un%20presupuesto"
         className="fixed p-4 text-white transition duration-300 bg-green-500 rounded-full shadow-lg bottom-8 right-8 hover:bg-green-600"
         aria-label="Chat on WhatsApp"
       >
