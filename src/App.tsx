@@ -13,7 +13,7 @@ import {
   QrCode,
 } from "lucide-react";
 import logo from "./imgs/sinfondo.png";
-import plaga from "./imgs/Diseño sin título.jpg"
+import plaga from "./imgs/Diseño sin título.jpg";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -26,58 +26,71 @@ function App() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header
-        className="text-white bg-gradient-to-r from-blue-400 to-blue-500 flex flex-col items-center justify-center"
-        data-aos="fade-down"
-      >
-        <nav className="container flex flex-col items-center justify-center md:justify-between pt-4 w-96 md:flex-row">
-          <div className="flex flex-col items-center space-x-2 md:flex-row">
-            <p className="text-2xl font-bold border-b-2">FUMIGACIONES LUDMAR</p>
-            <p className=" font-bold">📞 11-22541220</p>
+  className="w-full text-white bg-gradient-to-r from-blue-400 to-blue-500 flex flex-col items-center justify-center"
+  data-aos="fade-down"
+>
+  <nav className="w-full flex flex-col justify-center md:justify-between pt-4 md:flex-row px-4 md:px-8">
+    <div className="flex flex-col items-center space-y-2 md:space-y-0 md:space-x-4 ">
+      <p className="text-2xl font-bold border-b-2 ">FUMIGACIONES LUDMAR</p>
+      <p className="font-bold">📞 11-22541220</p>
+    </div>
 
-          </div>
-          <div className="flex justify-center my-4 w-full items-center">
-            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40 w-20 h-20"/>
-          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-5" />
-          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40 w-20 h-20"/>
+    <div className="flex justify-center my-4 w-full md:w-auto items-center">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444"
+        alt="cucaracha"
+        className="opacity-40 w-20 h-20"
+      />
+      <img
+        src={logo}
+        alt="logo"
+        className="w-40 h-40 rounded-full border-2 my-3 mx-5"
+      />
+      <img
+        src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png"
+        alt="raton"
+        className="opacity-40 w-20 h-20"
+      />
+    </div>
 
-          </div>
-          <div className="hidden space-x-6 md:flex" data-aos="fade-left">
-            <a href="#servicios" className="hover:text-teal-200">
-              Servicios
-            </a>
-            <a href="#testimonios" className="hover:text-teal-200">
-              Testimonios
-            </a>
-            <a href="#contacto" className="hover:text-teal-200">
-              Contacto
-            </a>
-          </div>
-        </nav>
+    <div className="hidden space-x-6 md:flex" data-aos="fade-left">
+      <a href="#servicios" className="hover:text-teal-200">Servicios</a>
+      <a href="#testimonios" className="hover:text-teal-200">Testimonios</a>
+      <a href="#contacto" className="hover:text-teal-200">Contacto</a>
+    </div>
+  </nav>
 
-        <div
-          className="container px-4 pb-3 md:py-20 mx-auto text-center bg-blue-600 "
-          data-aos="fade-up"
-        >
-          <h1 className="mb-6 text-2xl font-bold md:text-5xl pt-2">
-            Protección Total Contra Plagas
-          </h1>
-          <p className="mb-8 text-">
-            Expertos en soluciones eficaces en control de plagas, con mas de 20 años en el mercado, utilizacion de productos domisanitarios, habilitado por el ministerio de salud, contamos con personal tecnico altamente capacitado. <br /><strong> Nuestros servicios estan destinados para: <br />Hogares, bares,
-            restaurantes, kioscos, industrias, oficinas y consorcios.</strong>
-            <br />
-            <br />
-            <strong>
-              {" "}
-              Seguridad, eficacia y cuidado del medio ambiente en cada
-              intervención
-            </strong>
-            .
-          </p>
-          <button className="px-8 py-3 font-semibold text-teal-800 transition duration-300 bg-white rounded-full hover:bg-teal-100">
-            ¡Solicita tu presupuesto gratis!
-          </button>
-        </div>
-      </header>
+  <div
+    className="w-full px-4 pb-3 md:py-20 text-center bg-blue-600"
+    data-aos="fade-up"
+  >
+    <h1 className="mb-6 text-2xl font-bold md:text-5xl pt-2">
+      Protección Total Contra Plagas
+    </h1>
+    <p className="mb-8">
+      Expertos en soluciones eficaces en control de plagas, con más de 20
+      años en el mercado, utilización de productos domisanitarios,
+      habilitado por el ministerio de salud, contamos con personal técnico
+      altamente capacitado. <br />
+      <strong>
+        Nuestros servicios están destinados para: <br />
+        Hogares, bares, restaurantes, kioscos, industrias, oficinas y
+        consorcios.
+      </strong>
+      <br />
+      <br />
+      <strong>
+        Seguridad, eficacia y cuidado del medio ambiente en cada
+        intervención
+      </strong>
+      .
+    </p>
+    <button className="px-8 py-3 font-semibold text-teal-800 transition duration-300 bg-white rounded-full hover:bg-teal-100">
+      ¡Solicita tu presupuesto gratis!
+    </button>
+  </div>
+</header>
+
 
       {/* Services Section */}
       <section id="servicios" className="py-20 bg-gray-50" data-aos="fade-up">
@@ -111,10 +124,8 @@ function App() {
               },
               {
                 title: "Arañas, grillos y escorpiones",
-                image:
-                  "https://i.imgur.com/xGgtYPQ.jpeg",
+                image: "https://i.imgur.com/xGgtYPQ.jpeg",
               },
-             
             ].map((service, index) => (
               <div
                 key={index}
@@ -139,7 +150,8 @@ function App() {
                     href={`https://wa.me/91122541220?text=Hola%20me%20interesa%20el%20servicio%20contra%20*${service.title}*%20me%20darias%20mas%20informacion%3f`}
                     className="flex items-center font-semibold text-teal-600 hover:text-teal-800"
                   >
-                    Contactactar por WhatsApp <ChevronRight className="w-4 h-4 ml-1" />
+                    Contactactar por WhatsApp{" "}
+                    <ChevronRight className="w-4 h-4 ml-1" />
                   </a>
                 </div>
               </div>
@@ -156,8 +168,7 @@ function App() {
               {
                 icon: <QrCode className="w-12 h-12 text-teal-600" />,
                 title: "Certificados",
-                description:
-                  "Certificados de fumigacion con codigo QR.",
+                description: "Certificados de fumigacion con codigo QR.",
               },
               {
                 icon: <Shield className="w-12 h-12 text-teal-600" />,
@@ -168,8 +179,7 @@ function App() {
               {
                 icon: <HandCoins className="w-12 h-12 text-teal-600" />,
                 title: "Aceptamos todos los medios de pago",
-                description:
-                  "Débito, efectivo y transferencias.",
+                description: "Débito, efectivo y transferencias.",
               },
               {
                 icon: <ShieldCheck className="w-12 h-12 text-teal-600" />,
@@ -236,7 +246,8 @@ function App() {
             ¡Protege tu hogar hoy mismo!
           </h2>
           <p className="mb-8 text-xl">
-            Nos encontramos en zona sur, cubrimos toda la provincia de Buenos Aires.
+            Nos encontramos en zona sur, cubrimos toda la provincia de Buenos
+            Aires.
           </p>
           <p className="mb-8 text-xl">
             Contáctanos para obtener un presupuesto personalizado.
