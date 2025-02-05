@@ -36,9 +36,9 @@ function App() {
 
           </div>
           <div className="flex justify-center my-4 items-center">
-            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className="opacity-40 w-32 h-32"/>
-          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-5" />
-          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className="opacity-40 w-30 h-32"/>
+            <img src="https://cdn.shopify.com/s/files/1/0589/0034/9093/files/cucaracha-orienta-blatta-orientalis__1_1_480x480.png?v=1697905444" alt="" className=" w-32 h-32 rounded-full"/>
+          <img src={logo} alt="logo" className="w-40 h-40 rounded-full border-2 my-3 mx-5 bg-white" />
+          <img src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/31-Raton-domestico.png" alt=""  className=" w-30 h-32 rounded-full"/>
 
           </div>
           <div className="hidden space-x-6 md:flex" data-aos="fade-left">
