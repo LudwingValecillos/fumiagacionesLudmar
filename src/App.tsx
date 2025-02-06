@@ -288,19 +288,19 @@ function App() {
                 <span>WhatsApp</span>
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/ludmararg"
                 className="flex items-center text-teal-600 hover:text-teal-800"
               >
                 <Instagram className="w-6 h-6 mr-2" /> <span>Instagram</span>
               </a>
               <a
-                href=""
+                href="https://www.facebook.com/alexis.valecillos.758?rdid=gL49W6nIY1gdfOuW&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18gRcGPrFi%2F"
                 className="flex items-center text-teal-600 hover:text-teal-800"
               >
                 <Facebook className="w-6 h-6 mr-2" /> <span>Facebook</span>
               </a>
               <a
-                href=""
+                href="https://www.tiktok.com/@fumigaciones_ludmar?_t=ZM-8thWAUUWyQf&_r=1"
                 className="flex items-center text-teal-600 hover:text-teal-800"
               >
                 <svg
@@ -317,7 +317,7 @@ function App() {
                 <span>Tik tok</span>
               </a>
               <a
-                href=""
+                href="https://servicio.mercadolibre.com.ar/MLA-1474190409-fumigacion-ludmar-_JM"
                 className="flex items-center text-teal-600 hover:text-teal-800"
               >
                 <img src="https://www.svgrepo.com/show/517752/mercado-libre.svg" alt="" className="w-6 h-6 mr-2 bg-teal-400 rounded-s-full" /> <span>Mercado Libre</span>
