@@ -56,10 +56,10 @@ export function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className={cn(
-              'text-lg sm:text-xl font-extrabold font-display tracking-wider transition-colors duration-300',
+              'text-sm sm:text-xl font-extrabold font-display tracking-wider transition-colors duration-300',
               isScrolled ? 'text-brand-800' : 'text-white'
             )}>
-              LUDMAR
+              FUMIGACIONES LUDMAR
             </span>
             <span className={cn(
               'text-[10px] font-medium tracking-[0.2em] uppercase transition-colors duration-300 hidden sm:block',

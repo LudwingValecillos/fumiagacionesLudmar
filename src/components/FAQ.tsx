@@ -5,32 +5,32 @@ import { cn } from '../lib/utils';
 
 const faqs = [
   {
-    question: '¿Tengo que irme de casa durante la fumigación?',
-    answer: 'Depende del tratamiento y la plaga. Para geles (cucarachas/hormigas) no es necesario salir. Para pulverizaciones líquidas, sugerimos ausentarse entre 2 y 4 horas como medida preventiva. Nuestro técnico te indicará exactamente qué hacer.',
+    question: '¿Tengo que irme de casa?',
+    answer: 'Depende del tratamiento. Para geles no es necesario salir. Para pulverizaciones, sugerimos ausentarse 2-4 horas. El técnico te indica exactamente qué hacer.',
   },
   {
-    question: '¿Los productos son tóxicos para niños o mascotas?',
-    answer: 'Utilizamos exclusivamente productos domisanitarios autorizados por el Ministerio de Salud, de banda verde (la clasificación toxicológica más baja). Son totalmente seguros si se siguen nuestras indicaciones sencillas post-aplicación.',
+    question: '¿Es tóxico para niños o mascotas?',
+    answer: 'Usamos productos de banda verde (clasificación toxicológica más baja), autorizados por el Ministerio de Salud. Totalmente seguros siguiendo nuestras indicaciones.',
   },
   {
-    question: '¿Cuánto tarda en hacer efecto el tratamiento?',
-    answer: 'El efecto varía. Con geles cucarachicidas, verás una reducción drástica en 48-72 hrs, y eliminación total en 1-2 semanas. Los líquidos para arácnidos o pulgas tienen efecto de choque casi inmediato y poder residual por semanas.',
+    question: '¿Cuánto tarda en hacer efecto?',
+    answer: 'Geles cucarachicidas: reducción drástica en 48-72 hs, eliminación total en 1-2 semanas. Líquidos: efecto de choque inmediato con poder residual.',
   },
   {
-    question: '¿Dan certificado para habilitación de locales?',
-    answer: 'Sí, absolutamente. Entregamos el certificado oficial exigido por las autoridades municipales con código QR, esencial para comercios, restaurantes, bares e industrias.',
+    question: '¿Dan certificado para locales?',
+    answer: 'Sí. Entregamos el certificado oficial con código QR, esencial para comercios, restaurantes e industrias.',
   },
   {
-    question: '¿En qué zonas prestan servicio?',
-    answer: 'Nuestro centro operativo está en Zona Sur, pero brindamos cobertura a toda la provincia de Buenos Aires y Capital Federal. Consultá disponibilidad para tu zona.',
+    question: '¿En qué zonas trabajan?',
+    answer: 'Centro operativo en Zona Sur, con cobertura en toda la Provincia de Buenos Aires y Capital Federal.',
   },
   {
     question: '¿Qué garantía ofrecen?',
-    answer: 'Ofrecemos una garantía de 30 días: si durante este periodo la plaga persiste después de nuestro trabajo, realizamos un nuevo tratamiento sin costo adicional. La garantía se entrega por escrito junto con el certificado.',
+    answer: '30 días: si la plaga persiste, realizamos nuevo tratamiento sin costo. La garantía se entrega por escrito.',
   },
   {
-    question: '¿Cuáles son los medios de pago disponibles?',
-    answer: 'Aceptamos efectivo, débito, transferencias bancarias y Mercado Pago. Podés elegir el que más te convenga al momento del servicio.',
+    question: '¿Medios de pago disponibles?',
+    answer: 'Efectivo, débito, transferencias bancarias y Mercado Pago. Elegí el que más te convenga.',
   },
 ];
 
@@ -39,73 +39,70 @@ export function FAQ() {
 
   return (
     <section id="faq" className="section-padding bg-surface-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-50/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
-
       <div className="container mx-auto px-4 sm:px-6 relative">
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Left column */}
+        {/* Mobile: single column header + accordion. Desktop: 2+3 grid */}
+        <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 text-center lg:text-left"
           >
-            <span className="inline-block text-brand-600 font-bold text-sm tracking-wider uppercase mb-4 font-display">
-              Preguntas Frecuentes
+            <span className="inline-block text-brand-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 sm:mb-3 font-display">
+              FAQ
             </span>
-            <h2 className="section-title text-slate-900 mb-5">
-              Resolvemos tus dudas
+            <h2 className="section-title text-slate-900 mb-2 sm:mb-4">
+              Preguntas frecuentes
             </h2>
-            <p className="text-slate-500 leading-relaxed mb-8">
-              Encontrá respuestas a las preguntas más comunes sobre nuestros servicios.
-              Si no encontrás lo que buscás, escribinos por WhatsApp.
+            <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
+              Respuestas rápidas. Si no encontrás lo que buscás, escribinos.
             </p>
             <a
               href="https://wa.me/5491122541220?text=Hola,%20tengo%20una%20consulta"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary inline-flex"
+              className="btn-secondary hidden lg:inline-flex"
             >
-              <MessageCircle className="w-5 h-5" />
-              Hacer una Pregunta
+              <MessageCircle className="w-4 h-4" />
+              Hacer Pregunta
             </a>
           </motion.div>
 
-          {/* Right column - Accordion */}
-          <div className="lg:col-span-3 space-y-3">
+          {/* Accordion */}
+          <div className="lg:col-span-3 space-y-2 sm:space-y-3">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  transition={{ duration: 0.25, delay: index * 0.04 }}
                   className={cn(
-                    'rounded-2xl overflow-hidden transition-all duration-300',
+                    'rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300',
                     isOpen
-                      ? 'bg-white shadow-lg shadow-brand-500/5 border border-brand-100'
-                      : 'bg-white border border-slate-100 hover:border-slate-200'
+                      ? 'bg-white shadow-md shadow-brand-500/5 border border-brand-100'
+                      : 'bg-white border border-slate-100'
                   )}
                 >
                   <button
-                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 rounded-2xl"
+                    className="w-full px-4 py-3.5 sm:px-6 sm:py-4 flex items-center justify-between text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-xl sm:rounded-2xl"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
                   >
                     <span className={cn(
-                      'font-semibold font-display pr-8 transition-colors duration-300',
+                      'font-semibold font-display text-sm sm:text-base pr-4 transition-colors duration-300 leading-tight',
                       isOpen ? 'text-brand-700' : 'text-slate-800'
                     )}>
                       {faq.question}
                     </span>
                     <div className={cn(
-                      'w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300',
+                      'w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300',
                       isOpen ? 'bg-brand-500 text-white rotate-180' : 'bg-brand-50 text-brand-500'
                     )}>
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                   </button>
                   <AnimatePresence>
@@ -114,9 +111,9 @@ export function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.25 }}
                       >
-                        <div className="px-6 pb-6 text-slate-500 leading-relaxed">
+                        <div className="px-4 pb-4 sm:px-6 sm:pb-5 text-slate-500 text-sm leading-relaxed">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -125,6 +122,19 @@ export function FAQ() {
                 </motion.div>
               );
             })}
+          </div>
+
+          {/* Mobile CTA */}
+          <div className="lg:hidden text-center">
+            <a
+              href="https://wa.me/5491122541220?text=Hola,%20tengo%20una%20consulta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Hacer Pregunta
+            </a>
           </div>
         </div>
       </div>
