@@ -4,7 +4,8 @@
       "Bash(npx tsc:*)",
       "Bash(npm run:*)",
       "Bash(npx skils *)",
-      "Bash(npx skills *)"
+      "Bash(npx skills *)",
+      "Bash(node .agents/skills/impeccable/scripts/cleanup-deprecated.mjs)"
     ]
   }
 }

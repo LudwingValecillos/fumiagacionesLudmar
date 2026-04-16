@@ -49,8 +49,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Montserrat', 'system-ui', 'sans-serif'],
-        body: ['DM Sans', 'system-ui', 'sans-serif'],
+        display: ['Exo 2', 'system-ui', 'sans-serif'],
+        body: ['Source Sans 3', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
