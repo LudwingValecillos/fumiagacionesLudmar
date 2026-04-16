@@ -52,7 +52,7 @@ export function Process() {
         {/* Mobile: 2x2 grid, Desktop: 4 columns */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-[56px] left-[12%] right-[12%] h-px bg-gradient-to-r from-brand-200 via-brand-300 to-brand-200 z-0" />
+          <div className="hidden lg:block absolute top-[56px] left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-brand-300/60 to-transparent z-0" />
 
           {steps.map((step, index) => (
             <motion.div
@@ -60,8 +60,8 @@ export function Process() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="relative flex flex-col items-center text-center group"
+              transition={{ duration: 0.55, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative flex flex-col items-center text-center group cursor-default"
             >
               {/* Step icon */}
               <div className="relative z-10 mb-3 sm:mb-5">

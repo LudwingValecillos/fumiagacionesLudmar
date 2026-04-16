@@ -51,7 +51,7 @@ function StatCard({ stat, index }: { stat: typeof stats[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="relative text-center"
     >
       <div className="relative">
@@ -75,8 +75,9 @@ export function Stats() {
       <div className="absolute inset-0 bg-gradient-to-br from-brand-800 via-brand-900 to-brand-950" />
       <div className="absolute inset-0 noise-overlay opacity-20" />
 
-      {/* Decorative circles - hidden on mobile */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-brand-500/10 pointer-events-none hidden md:block" />
+      {/* Ambient decorations */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-brand-500/8 pointer-events-none hidden md:block" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] rounded-full border border-brand-500/6 pointer-events-none hidden md:block" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div

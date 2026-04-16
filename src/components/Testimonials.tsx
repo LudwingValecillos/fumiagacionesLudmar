@@ -1,121 +1,151 @@
 import { motion } from 'framer-motion';
-import { Star, CheckCircle, Quote } from 'lucide-react';
+import { Star, CheckCircle } from 'lucide-react';
 
 const testimonials = [
   {
     name: 'María González',
     role: 'Restaurante, Zona Sur',
-    content: 'Excelente servicio. Ludmar acabó con nuestro problema de cucarachas de raíz. Recomendado al 100%.',
+    content: 'Ludmar acabó con nuestro problema de cucarachas de raíz. Una sola visita y cero reincidencia. El certificado llegó al instante. Recomendado.',
     rating: 5,
     initials: 'MG',
-    color: 'from-brand-400 to-brand-600',
+    featured: true,
   },
   {
     name: 'Carlos Ruiz',
-    role: 'Lomas de Zamora',
-    content: 'Acabaron con mi problema en una sola visita. Increíble la rapidez y prolijidad. Los volvería a llamar.',
+    role: 'Propietario, Lomas de Zamora',
+    content: 'Rapidez y prolijidad. Problema resuelto en una visita. Los volvería a llamar sin dudarlo.',
     rating: 5,
     initials: 'CR',
-    color: 'from-navy-400 to-navy-600',
+    featured: false,
   },
   {
     name: 'Ana Martínez',
-    role: 'Administradora Consorcio',
-    content: 'Siempre puntuales, servicio de primera. Certificado al momento y nunca una queja de vecinos.',
+    role: 'Administradora de Consorcio',
+    content: 'Siempre puntuales. Certificado al momento y sin quejas de ningún vecino.',
     rating: 5,
     initials: 'AM',
-    color: 'from-accent-400 to-accent-600',
+    featured: false,
   },
 ];
 
-export function Testimonials() {
+function Stars({ count }: { count: number }) {
   return (
-    <section id="testimonios" className="section-padding bg-slate-50/50 relative overflow-hidden">
-      {/* Elementos decorativos de fondo para un look premium */}
-      <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-b from-brand-50/50 to-transparent blur-3xl -z-10 transform translate-x-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-full md:w-1/2 h-full bg-gradient-to-t from-slate-100/80 to-transparent blur-3xl -z-10 transform -translate-x-1/3"></div>
+    <div className="flex gap-0.5">
+      {[...Array(count)].map((_, i) => (
+        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+      ))}
+    </div>
+  );
+}
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+export function Testimonials() {
+  const featured = testimonials.find((t) => t.featured)!;
+  const rest = testimonials.filter((t) => !t.featured);
+
+  return (
+    <section id="testimonios" className="section-padding bg-surface-50 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative">
+
+        {/* Header */}
         <motion.div
-           initial={{ opacity: 0, y: 15 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           className="text-center mb-10 sm:mb-14 md:mb-16"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10 sm:mb-14"
         >
-          <span className="inline-flex items-center justify-center px-4 py-1.5 bg-brand-50 text-brand-600 rounded-full font-bold text-xs sm:text-sm tracking-widest uppercase mb-4 border border-brand-100/50 shadow-sm">
+          <span className="inline-block text-brand-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-3 font-display">
             Testimonios
           </span>
-          <h2 className="section-title text-slate-900 mb-4 sm:mb-6">
-            Lo que dicen nuestros clientes
+          <h2 className="section-title text-slate-900 mb-0 max-w-lg">
+            Lo que dicen quienes confían en nosotros
           </h2>
-          <p className="section-subtitle max-w-2xl mx-auto text-slate-600">
-            Hogares y comercios que ya confían en nuestra eficacia para mantener sus espacios seguros y libres de plagas.
-          </p>
         </motion.div>
 
-        {/* Stack vertical para móvil (Grid 1 columna), Grid de 3 columnas para desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-          {testimonials.map((t, index) => (
+        {/* Asymmetric layout: featured large left + 2 stacked right */}
+        <div className="grid md:grid-cols-[1.4fr_1fr] gap-4 sm:gap-5">
+
+          {/* Featured testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="relative bg-brand-950 rounded-3xl p-7 sm:p-10 overflow-hidden flex flex-col justify-between min-h-[280px]"
+          >
+            <div className="absolute inset-0 noise-overlay opacity-15 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-48 h-48 translate-x-1/4 translate-y-1/4 pointer-events-none">
+              <div className="w-full h-full rounded-full bg-brand-400/8 blur-2xl" />
+            </div>
+
+            <div className="relative z-10">
+              <Stars count={featured.rating} />
+              <p className="text-white/85 text-base sm:text-lg leading-relaxed mt-5 mb-7" style={{ fontStyle: 'normal' }}>
+                "{featured.content}"
+              </p>
+            </div>
+
+            <div className="relative z-10 flex items-center gap-3 pt-5 border-t border-white/10">
+              <div className="w-11 h-11 rounded-full bg-brand-500 flex items-center justify-center text-white font-bold font-display text-sm flex-shrink-0">
+                {featured.initials}
+              </div>
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <h4 className="font-bold font-display text-white text-sm">{featured.name}</h4>
+                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                </div>
+                <p className="text-brand-300/60 text-xs">{featured.role}</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 2 compact testimonials stacked */}
+          <div className="flex flex-col gap-4 sm:gap-5">
+            {rest.map((t, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.12 + i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-slate-100 shadow-sm flex-1 flex flex-col justify-between"
+              >
+                <div>
+                  <Stars count={t.rating} />
+                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed mt-3 mb-4">
+                    "{t.content}"
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                  <div className="w-9 h-9 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-bold font-display text-xs flex-shrink-0">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1">
+                      <h4 className="font-bold font-display text-slate-900 text-sm">{t.name}</h4>
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-500 flex-shrink-0" />
+                    </div>
+                    <p className="text-slate-400 text-xs">{t.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Rating summary */}
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-white p-6 sm:p-8 rounded-3xl border border-slate-100/80 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full"
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex items-center justify-between bg-white rounded-2xl px-5 py-3.5 border border-slate-100 shadow-sm"
             >
-              {/* Marca de agua de comillas (muy sutil de fondo) */}
-              <div className="absolute -right-4 -bottom-4 text-slate-50 group-hover:text-slate-100 transition-colors duration-500 z-0 transform -rotate-12 translate-y-2">
-                <Quote className="w-32 h-32 sm:w-40 sm:h-40" />
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                <strong className="text-slate-800 text-sm font-bold">4.9/5</strong>
               </div>
-
-              <div className="relative z-10 flex-grow">
-                {/* Estrellas */}
-                <div className="flex gap-1 mb-5">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400 drop-shadow-sm" />
-                  ))}
-                </div>
-
-                {/* Contenido */}
-                <p className="text-slate-700 text-base sm:text-[17px] leading-relaxed mb-6 font-medium">
-                  "{t.content}"
-                </p>
-              </div>
-
-              {/* Autor */}
-              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-slate-100 mt-auto">
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${t.color} rounded-full flex items-center justify-center text-white font-bold font-display text-[15px] sm:text-[17px] shadow-sm flex-shrink-0 border-[3px] border-white ring-1 ring-slate-100`}>
-                  {t.initials}
-                </div>
-                <div className="flex flex-col">
-                  <h4 className="font-bold font-display text-slate-900 text-[15px] sm:text-[17px] flex items-center gap-1.5 leading-tight">
-                    {t.name}
-                    <CheckCircle className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-                  </h4>
-                  <span className="text-[13px] sm:text-[15px] text-slate-500 mt-0.5">{t.role}</span>
-                </div>
-              </div>
+              <span className="text-slate-500 text-xs font-medium">+100 reseñas verificadas</span>
             </motion.div>
-          ))}
-        </div>
-
-        {/* Rating summary interactivo/elegante */}
-        <motion.div
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           viewport={{ once: true }}
-           className="text-center mt-10 sm:mt-12"
-        >
-          <div className="inline-flex items-center gap-2.5 bg-white px-5 sm:px-6 py-3 rounded-full shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300">
-             <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-             <div className="flex items-center gap-1.5">
-               <strong className="text-slate-800 text-sm sm:text-base font-bold">4.9/5</strong>
-               <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-               <span className="text-slate-500 text-[13px] sm:text-sm font-medium">Más de 100 reseñas verificadas</span>
-             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
