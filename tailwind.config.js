@@ -5,17 +5,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#e6f5ed',
-          100: '#b3e0c8',
-          200: '#80cba3',
-          300: '#4db67e',
-          400: '#26a663',
-          500: '#006837',
-          600: '#005c30',
-          700: '#004d28',
-          800: '#003d1f',
-          900: '#002a15',
-          950: '#001a0d',
+          50: '#e6f0ff',
+          100: '#b3d1ff',
+          200: '#80b3ff',
+          300: '#4d94ff',
+          400: '#2680ff',
+          500: '#0052CC',
+          600: '#0047b3',
+          700: '#003b99',
+          800: '#002f80',
+          900: '#002066',
+          950: '#001133',
         },
         navy: {
           50: '#e6f0f7',
@@ -42,10 +42,10 @@ export default {
           900: '#8c5a00',
         },
         surface: {
-          50: '#fafbf7',
-          100: '#f3f5ee',
-          200: '#e8eade',
-          300: '#d4d8c8',
+          50: '#f7f8fc',
+          100: '#f0f2f7',
+          200: '#e2e6f0',
+          300: '#cdd3e5',
         },
       },
       fontFamily: {
@@ -54,7 +54,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-mesh': 'linear-gradient(135deg, #006837 0%, #004d28 30%, #003d1f 60%, #002a15 100%)',
+        'hero-mesh': 'linear-gradient(135deg, #0052CC 0%, #003b99 30%, #002f80 60%, #002066 100%)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
